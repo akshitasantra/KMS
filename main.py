@@ -1,16 +1,20 @@
-# This is a sample Python script.
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.keys import Keys
+import time
+PATH = "C:\\Program Files (x86)\\chromedriver.exe"
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+driver = webdriver.Chrome()
+driver.get("https://www.vype.com/Texas/Houston/vype-hou-public-school-cheer-team-of-the-year-fan-poll-presented-by"
+          "-freddys")
 
+try:
+    element = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.XPATH, "//span[text()='Read More']"))
+    )
+    element.click()
+except:
+    print("didnt work")
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('help')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
