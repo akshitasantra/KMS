@@ -10,7 +10,7 @@ driver = webdriver.Chrome()
 while(True):
     driver.get("https://www.vype.com/Texas/Houston/vype-hou-public-school-cheer-team-of-the-year-fan-poll-presented-by"
               "-freddys")
-    time.sleep(5)
+    time.sleep(10)
 
     # = driver.find_element(By.ID, "PDI_answer57332800")
 
@@ -32,16 +32,18 @@ while(True):
     vote_button.click()
 
     time.sleep(7)
-    answer_sheet = driver.find_element(By.ID, "captcha_12735729")
-    numbers = answer_sheet.text.split('+')
-    num1 = int(numbers[0].strip())
-    numbers[1] = numbers[1].split("=")[0].strip()
-    num2 = int(numbers[1].strip())
-    result = num1 + num2
-    answer_box = driver.find_element(By.ID, "answer_12735729")
-    answer_box.send_keys(result)
-    answer_box.send_keys(Keys.ENTER)
 
+
+    if(len(driver.find_elements(By.ID, "captcha_12735729")) > 0):
+            answer_sheet = driver.find_element(By.ID, "captcha_12735729")
+            numbers = answer_sheet.text.split('+')
+            num1 = int(numbers[0].strip())
+            numbers[1] = numbers[1].split("=")[0].strip()
+            num2 = int(numbers[1].strip())
+            result = num1 + num2
+            answer_box = driver.find_element(By.ID, "answer_12735729")
+            answer_box.send_keys(result)
+            answer_box.send_keys(Keys.ENTER)
 
     time.sleep(7)
 
