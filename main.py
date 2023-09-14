@@ -54,8 +54,8 @@ def vote():
            time.sleep(1)
        print("Vote cast successfully")
    except:
+       print("Vote unsuccessful")
        traceback.print_exc()
-       print("VOTE UNSUCCESSFUL - SEE TRACEBACK")
 
 
 while True:
@@ -93,5 +93,21 @@ while True:
    t15.start()
    t16.start()
 
+   t1.join()
+   t2.join()
+   t3.join()
+   t4.join()
+   t5.join()
+   t6.join()
+   t7.join()
+   t8.join()
+   t9.join()
+   t10.join()
+   t11.join()
+   t12.join()
+   t13.join()
+   t14.join()
+   t15.join()
    t16.join()
+
 
