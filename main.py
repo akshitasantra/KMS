@@ -7,6 +7,10 @@ from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.keys import Keys
 import time
 import threading
+#to run as a headless browser add these two imports
+#from selenium.webdriver.chrome.service import Service as ChromeService
+#from selenium.webdriver.chrome.options import Options as ChromeOptions
+
 
 PATH = "C:\\Program Files (x86)\\chromedriver.exe"
 
